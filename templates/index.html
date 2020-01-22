@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <div class="cols-ind">
+    <div class="single-col">
+      <img src="static/banner.png">
+    </div>
+    <div class="single-col" style="padding-top:100px">
+      <p class="title">Classical Ciphers</p>
+      <p style="font-size: 18px">Named after the muse of History, ClioCrypt is a web app<br>
+      about classical ciphers. In cryptography, a classical cipher<br> is one that was used historically
+      but now has fallen into disuse.</p><br>
+
+      <div class="smooth-scroll">
+        <a class="smooth-scroll center button pseudo-btn" href="#main">Learn more</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="main" style="padding-top: 115px; padding-bottom:150px" class="cols-main">
+    <div class="single-col" style="padding-top:10px">
+      <p class="title2">Caesar Cipher</p>
+      <p style="padding-top:10px">A monoalphabetic substitution cipher in which each letter in the plaintext is replaced by
+      a letter some fixed number of positions down the alphabet, wrapping around it.
+      For example, with a key of 3, A would be replaced by D, and so on; with a key of 27, Z would be replaced by A. Thus,
+      Caesar's algorithm can be generalised as:<br><br>
+
+      ciphertext[i] = (plaintext[i] + key) mod 26<br><br>
+      The method is named after Julius Caesar, who was the
+      <a href="https://en.wikipedia.org/wiki/Caesar_cipher#History_and_usage">first recorded user</a> of the scheme.
+      According to Roman Empire historian Suetonius, Caesar used it with a shift (key) of 3 to protect messages of
+      military significance.</p><br>
+      <form action="/caesar" method="get">
+        <button class="button" type="submit">Try it!</button>
+      </form>
+    </div>
+
+    <div class="single-col" style="padding-top:10px">
+      <p class="title2">Vigenère Cipher</p>
+      <p style="padding-top:10px">A polyalphabetic substitution cipher in which each letter in the plaintext is shifted a la Caesar
+      by a different value, each corresponding to a letter of a keyword. For example, with a key of "ay", the first letter of the
+      plaintext would be shifted by 0 (a), the second by 25 (y), the third by 0 again, and so on.<br><br>
+      The method is named after Blaise de Vigenère, although that is a
+      <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher#History">misattribution</a>. Blaise de Vigenère did publish a type
+      of polyalphabetic cipher in 1586, but the "Vigenère cipher" is the one first described by Giovan Battista Bellaso in his 1553
+      book <i>La cifra del Sig. Giovan Battista Bellaso.</i></p><br>
+      <form action="/vigenere" method="get">
+        <button class="button" type="submit">Try it!</button>
+      </form>
+    </div>
+
+    <div class="single-col" style="padding-top:10px">
+      <p class="title2">Scytale Cipher</p>
+      <p style="padding-top:10px">A transposition cipher in which a band is wrapped around a
+      <a href="https://en.wikipedia.org/wiki/Scytale">scytale</a> – a cylinder of some fixed
+      size –, a message is written, and when the band is unrolled a ciphertext appears.<br><br>
+      Without a scytale, the same is achieved by placing the plaintext row-wise on a grid
+      some fixed number of columns, then rewriting it column-wise.
+      For example, with a key of 4, "helloworld" becomes "holewdloxlrx" (with X as filler):<br><br>
+      <img src="static/scytale.png" width=77px><br><br>
+      The method was used in Ancient Greece and Sparta.<br><br>
+      <form action="/scytale" method="get">
+        <button class="button" type="submit">Try it!</button>
+      </form>
+    </div>
+  </div>
+
+
+{% endblock %}

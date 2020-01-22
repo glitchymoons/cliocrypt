@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <div style="padding-top:150px">
+    <div class="center" role="alert">
+      <h4 class="error-title">Error</h4>
+      <p>{{ message }}</p>
+    </div>
+
+     <div class="cols-err">
+      <form action="/caesar" method="get">
+        <button class="button single-col" type="submit">Back to Caesar</button>
+      </form><br>
+
+      <form action="/vigenere" method="get">
+        <button class="button single-col" type="submit">Back to Vigenère</button>
+      </form>
+
+      <form action="/scytale" method="get">
+        <button class="button single-col" type="submit">Back to Scytale</button>
+      </form>
+     </div>
+   </div>
+
+
+{% endblock %}

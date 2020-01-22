@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <div class="cols-app">
+    <div class="center" style="font-size:20px">Vigenère Encryption</div><br>
+    <form action="/vigenere_enc" method="post">
+
+      <textarea class ="textbox" name="plaintext" placeholder="Plaintext" rows="7" cols="60">{{ inptE }}</textarea><br><br>
+
+      <input class="textbox turq-border" name="key" placeholder="Keyword" value={{keyE}}><br><br>
+      <button class="button" type="submit">Encrypt</button><br><br>
+
+      <textarea readonly class="textbox" name="ciphertext" placeholder="Ciphertext" rows="7" cols="60">{{ outptE }}</textarea><br><br>
+
+    </form>
+
+    <div class="center" style="font-size:20px">Vigenère Decryption</div><br>
+      <form action="/vigenere_dec" method="post">
+
+        <textarea class="textbox" name="ciphertext" placeholder="Ciphertext" rows="7" cols="60">{{ inptD }}</textarea><br><br>
+
+        <input class="textbox turq-border" name="key" placeholder="Keyword" value={{keyD}}><br><br>
+        <button class="button" type="submit">Decrypt</button><br><br>
+
+        <textarea readonly class="textbox" name="plaintext" placeholder="Plaintext" rows="7" cols="60">{{ outptD }}</textarea><br><br>
+
+      </form>
+  </div>
+
+{% endblock %}
