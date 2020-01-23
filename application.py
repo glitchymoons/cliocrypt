@@ -136,7 +136,7 @@ def scytale_enc():
 
     # Check input
     if not request.form.get("plaintext") or not request.form.get("key"):
-        return render_template("error.html", message="Enter valid text and a valid keyword!")
+        return render_template("error.html", message="Enter valid text and a key!")
 
     plaintext = request.form.get("plaintext")
     keyE = str(request.form.get("key"))
@@ -154,7 +154,7 @@ def scytale_dec():
 
     # Check input
     if not request.form.get("ciphertext") or not request.form.get("key"):
-        return render_template("error.html", message="Enter valid text and a keyword!")
+        return render_template("error.html", message="Enter valid text and a key!")
 
     ciphertext = request.form.get("ciphertext")
     keyD = str(request.form.get("key"))
@@ -168,6 +168,5 @@ def scytale_dec():
     return render_template("scytale.html", inptD=inptD, keyD=keyD, outptD=outptD)
 
 if __name__ == "__main__":
- app.debug = True
- port = int(os.environ.get("PORT", 5000))
- app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
